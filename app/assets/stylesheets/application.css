@@ -28,3 +28,7 @@
  .nav_link {
     text-decoration: none;
  }
+
+.article_item {
+    list-style: none;
+}
