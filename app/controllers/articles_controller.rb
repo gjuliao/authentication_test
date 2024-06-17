@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
             redirect_to root_path
         else
             flash[:alert] = 'Article not saved'
+            render new
         end
     end
 
