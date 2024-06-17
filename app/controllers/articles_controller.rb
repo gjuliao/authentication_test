@@ -14,5 +14,11 @@ class ArticlesController < ApplicationController
             notice[:alert] = 'Article not saved'
         end
     end
+
+    private
+
+    def article_params
+        params.require(:article).permit(:title, :body)
+    end
     
 end
