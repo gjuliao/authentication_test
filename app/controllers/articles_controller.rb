@@ -7,11 +7,12 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article.create(article_params)
+        @article = Article.create(article_params)
         if @article.save
-            notice[:success] = 'Article created succesfully'
+            flash[:notice] = 'Article created succesfully'
+            redirect_to root_path
         else
-            notice[:alert] = 'Article not saved'
+            flash[:alert] = 'Article not saved'
         end
     end
 
