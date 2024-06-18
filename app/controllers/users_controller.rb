@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authorized, only: [:show]
+
     def new
         @user = User.new
     end
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
           render 'new', status: :unprocessable_entity
         end
     end
-      
+
     private
 
     def user_params
