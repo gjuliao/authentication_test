@@ -8,13 +8,13 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = Article.create(article_params)
+        @article = Article.new(article_params)
         if @article.save
-            flash[:notice] = 'Article created succesfully'
-            redirect_to root_path
+            flash[:notice] = 'Article created successfully'
+            redirect_to @article
         else
-            flash[:alert] = 'Article not saved'
-            render new
+            flash.now[:alert] = 'Article not saved'
+            render 'new', status: :unprocessable_entity
         end
     end
 

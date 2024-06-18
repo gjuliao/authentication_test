@@ -1,3 +1,10 @@
+<% if @article.errors.any? %>
+    <h2>The following errors are preventing from saving:</h2>
+    <% @article.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %>
+<% end %>
+
 <%= form_with model: @article do |f| %>
 
 <%= f.label :title, class: 'form_link' %>
