@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :articles
   resources :users, except: %w[:new]
   get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 end
