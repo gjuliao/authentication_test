@@ -1,6 +1,6 @@
 <h2>Login page</h2>
 
-<%= form_with model: @session, url: login_path do |form| %>
+<%= form_with model: @session, url: sessions_path do |form| %>
     <%= form.label :username %>
     <%= form.text_field :username %>
     <%= form.label :password %>

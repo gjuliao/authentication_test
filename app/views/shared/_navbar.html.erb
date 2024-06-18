@@ -2,7 +2,9 @@
   <%= link_to 'Home', root_path, class: 'nav_link' %>
   <% if user_login? %>
     <%= link_to 'New Article', new_article_path, class: 'nav_link' %>
-    <%= link_to 'Logout', login_path, class: 'nav_link' %>
+    <%= form_with url: sessions_path, method: :delete, local: true do |form| %>
+      <%= form.submit 'Logout', class: 'nav_btn' %>
+    <% end %>
     <%= link_to 'Show User', user_path(session[:user_id]), class: 'nav_link' %>
   <% else %>
     <%= link_to 'Sign Up', signup_path, class: 'nav_link' %>
