@@ -15,16 +15,19 @@
  */
 
  /*mobile view*/
- @media screen and (max-width: 500px) {
+ @media screen and (max-width: 550px) {
    .navbar-desktop {
       display: none;
       width: 90%;
       justify-content: end;
    }
 
+   .mobile-navbar-links .nav_link {
+      list-style: none;
+   }
+
    .mobile-navbar {
       display: flex;
-      cursor: pointer;
       justify-content: space-between;
    }
 
@@ -33,6 +36,7 @@
       height: 5px;
       background-color: gray;
       margin: 2px 0;
+      cursor: pointer;
    }
 
    .mobile-navbar-links {
@@ -42,6 +46,16 @@
 
    .mobile-navbar-links #myLinks {
       display: none;
+   }
+
+   .cross {
+      display: none;
+   }
+
+   #myLinks {
+      position: fixed;
+      right: 0;
+      flex-direction: column;
    }
  }
 
@@ -78,4 +92,12 @@
      font-size: 16px;
      cursor: pointer;
     }
+
+    #myLinks {
+      display: none;
+    }
+
+    .cross {
+      display: none;
+   }
 }

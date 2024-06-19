@@ -7,7 +7,7 @@ export default class extends Controller {
     static values = { isOpen: { type: Boolean, default: false } };
 
   connect() {
-    console.log('hello world')
+    console.log('Connected to Toggle Stimulus Controller')
   }
 
   menu() {
@@ -20,7 +20,7 @@ export default class extends Controller {
   }
 
   show(){
-    this.menuTarget.style.display = "block";
+    this.menuTarget.style.display = "flex";
     this.hamburguerTarget.style.display = "block";
     this.crossTarget.style.display = "none";
   }
