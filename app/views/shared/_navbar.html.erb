@@ -1,4 +1,4 @@
-<ul class="navbar">
+<ul class="navbar" data-controller="toggle">
   <div class="navbar-desktop">
     <%= link_to 'Home', root_path, class: 'nav_link' %>
     <% if user_login? %>
@@ -16,7 +16,7 @@
   <div class="mobile-navbar">
     <div class="mobile-navbar-links">
       <%= link_to 'Home', root_path, class: 'nav_link' %>
-      <div id="myLinks">
+      <div id="myLinks" data-toggle-target="menu">
         <% if user_login? %>
           <%= link_to 'New Article', new_article_path, class: 'nav_link' %>
           <%= form_with url: sessions_path, method: :delete, local: true do |form| %>
@@ -29,10 +29,14 @@
         <% end %>
       </div>
     </div>
-    <div>
-      <div class="hamburguer"></div>
-      <div class="hamburguer"></div>
-      <div class="hamburguer"></div>
+
+    <div data-action="click->toggle#menu">
+      <div data-toggle-target="hamburguer">
+        <div class="hamburguer"></div>
+        <div class="hamburguer"></div>
+        <div class="hamburguer"></div>
+      </div>
+      <div data-toggle-target="cross">X</div>
     </div>
   </div>
 </ul>
