@@ -14,33 +14,68 @@
  *= require_self
  */
 
- .navbar {
-    display: flex;
-    width: 90%;
-    justify-content: end;
+ /*mobile view*/
+ @media screen and (max-width: 500px) {
+   .navbar-desktop {
+      display: none;
+      width: 90%;
+      justify-content: end;
+   }
+
+   .mobile-navbar {
+      display: flex;
+      cursor: pointer;
+      justify-content: space-between;
+   }
+
+   .hamburguer {
+      width: 35px;
+      height: 5px;
+      background-color: gray;
+      margin: 2px 0;
+   }
+
+   .mobile-navbar-links {
+      overflow: hidden;
+      position: relative;
+   }
+
+   .mobile-navbar-links #myLinks {
+      display: none;
+   }
  }
 
- .navbar .nav_link {
-    display: inline;
-    margin-right: 5%;
- }
-
- .nav_link {
-    text-decoration: none;
- }
-
-.article_item {
-    list-style: none;
-}
-
-.nav_btn {
-  border: none;
-  background-color: white;
-  color: black;
-  padding: 0px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
+  /*desktop view*/
+ @media screen and (min-width: 550px) {
+	
+    .navbar-desktop {
+       display: flex;
+       width: 90%;
+       justify-content: end;
+    }
+    
+    .navbar-desktop .nav_link {
+       display: inline;
+       margin-right: 5%;
+    }
+    
+    .nav_link {
+       text-decoration: none;
+    }
+    
+    .article_item {
+       list-style: none;
+    }
+    
+    .nav_btn {
+     border: none;
+     background-color: white;
+     color: black;
+     padding: 0px 16px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     cursor: pointer;
+    }
 }
