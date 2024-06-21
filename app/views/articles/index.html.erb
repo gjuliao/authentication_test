@@ -7,7 +7,10 @@
     <% end %>
 </div>
 
-<div data-controller="test">
+<div data-controller="test" data-test-background-class="test-class">
   <button data-action="click->test#change">Change</button>
   <p data-test-target="text">This is a change color test text.</p>
+  <div>
+  <p data-action="click->test#background">Paragraph 2</p>
+  </div>
 </div>

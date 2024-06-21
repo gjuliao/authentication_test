@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
 
     static targets = [ "text" ];
+    static classes = ["background"];
 
     // static values = { isOpen: { type: Boolean, default: false } };
 
@@ -21,5 +22,9 @@ export default class extends Controller {
     let button = document.createElement('button');
     button.textContent = 'New Button';
     this.element.appendChild(button);
+  }
+
+  background() {
+    this.element.classList.add(this.backgroundClass)
   }
 }

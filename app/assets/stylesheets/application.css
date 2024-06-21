@@ -100,4 +100,8 @@
     .cross {
       display: none;
    }
+
+   .test-class {
+      background-color: pink;
+   }
 }
