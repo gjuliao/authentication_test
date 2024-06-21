@@ -13,6 +13,13 @@ export default class extends Controller {
   change() {
     console.log(this.element);
     // this.element.style.backgroundColor = "blue";
-    this.textTarget.style.backgroundColor = "Yellow"
+    this.textTarget.style.backgroundColor = "Yellow";
+    let p = document.createElement('p');
+    p.textContent = 'Hello world';
+    this.element.appendChild(p);
+
+    let button = document.createElement('button');
+    button.textContent = 'New Button';
+    this.element.appendChild(button);
   }
 }
