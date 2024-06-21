@@ -21,13 +21,13 @@ export default class extends Controller {
 
   show(){
     this.menuTarget.style.display = "flex";
-    this.hamburguerTarget.style.display = "block";
-    this.crossTarget.style.display = "none";
+    this.hamburguerTarget.style.display = "none";
+    this.crossTarget.style.display = "block";
   }
 
   hide(){
     this.menuTarget.style.display = "none";
-    this.hamburguerTarget.style.display = "none";
-    this.crossTarget.style.display = "block";
+    this.hamburguerTarget.style.display = "block";
+    this.crossTarget.style.display = "none";
   }
 }
