@@ -5,4 +5,8 @@
       <p class="article_item"> 
         <%= article.body %>
       </p>
+
+      <%= turbo_frame_tag 'edit_article' do %>
+        <p><%= link_to 'Edit', edit_article_path(article) %></p>
+      <% end %>
 </div>
