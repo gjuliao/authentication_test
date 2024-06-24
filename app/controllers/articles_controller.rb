@@ -20,6 +20,21 @@ class ArticlesController < ApplicationController
         end
     end
 
+    def edit
+        @article = Article.find(params[:id])
+    end
+
+    def update
+        @article = Article.find(params[:id])
+        if @article.update(article_params)
+            flash[:notice] = 'Article updated successfully'
+            redirect_to root_path
+        else
+            flash.now[:alert] = 'Article not updated'
+            render 'new', status: :unprocessable_entity
+        end
+    end
+
     private
 
     def article_params
