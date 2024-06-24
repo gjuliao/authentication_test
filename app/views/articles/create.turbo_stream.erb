@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "article_list", @article %>
+<%= turbo_stream.replace "new_article", partial: "form", locals: { article: Article.new } %>
