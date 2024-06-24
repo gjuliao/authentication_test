@@ -1,9 +1,10 @@
+<%= turbo_frame_tag "new_article" do %>
+  <%= link_to 'New Article', new_article_path %>
+<% end %>
+
 <div>
     <% @articles.each do |article| %>
-    <ul>
-      <li class="article_item"> <%= article.title%> </li>
-      <li class="article_item">  <%= article.body %> </li>
-    </ul>
+      <%= render @articles %>
     <% end %>
 </div>
 

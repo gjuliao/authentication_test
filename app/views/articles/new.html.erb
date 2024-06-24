@@ -1,19 +1,12 @@
-<% if @article.errors.any? %>
-    <h2>The following errors are preventing from saving:</h2>
-    <ul>
-        <% @article.errors.full_messages.each do |message| %>
-        <li class="article_item"> <%= message %> </li>
-        <% end %>
-    </ul>
-<% end %>
+<%= turbo_frame_tag "new_article" do %>
+    <% if @article.errors.any? %>
+        <h2>The following errors are preventing from saving:</h2>
+        <ul>
+            <% @article.errors.full_messages.each do |message| %>
+            <li class="article_item"> <%= message %> </li>
+            <% end %>
+        </ul>
+    <% end %>
 
-<%= form_with model: @article do |f| %>
-
-<%= f.label :title, class: 'form_link' %>
-<%= f.text_field :title, class: 'form_link' %>
-
-<%= f.label :body, class: 'form_link' %>
-<%= f.text_area :body, class: 'form_link' %>
-
-<%= f.submit 'Submit', class: 'form_btn' %>
+    <%= render "form", article: @article %>
 <% end %>

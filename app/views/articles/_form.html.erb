@@ -1,0 +1,10 @@
+<%= form_with model: article do |f| %>
+
+<%= f.label :title, class: 'form_link' %>
+<%= f.text_field :title, class: 'form_link' %>
+
+<%= f.label :body, class: 'form_link' %>
+<%= f.text_area :body, class: 'form_link' %>
+
+<%= f.submit 'Submit', class: 'form_btn' %>
+<% end %>
