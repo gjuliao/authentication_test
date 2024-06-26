@@ -10,9 +10,5 @@
 
 <%= turbo_stream_from "rooms_list" %>
 <div id="rooms">
-    <% @rooms.each do |room| %>
-        <%= turbo_frame_tag "room_#{room.id}" do %>
-                  <%= render partial: "rooms/room", locals: { room: room } %>
-        <% end %>
-    <% end %>
+    <%= render @rooms %>
 </div>
