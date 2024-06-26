@@ -1,0 +1,6 @@
+<!-- create.turbo_stream.erb -->
+<%# turbo_stream.append 'rooms_list', partial: 'rooms/room', locals: { room: @room } %>
+
+<%= turbo_stream.append "rooms" do %>
+  <%= render @room %>
+<% end %>

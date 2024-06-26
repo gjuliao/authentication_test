@@ -1,1 +1,18 @@
-<h1>Chat App Room</h1>
+<h1>Rooms</h1>
+
+
+<%= form_with(model: @room, data: { turbo: "true" }) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.submit :submit %>
+<% end %>
+
+<%= turbo_stream_from "rooms_list" %>
+<div id="rooms">
+    <% @rooms.each do |room| %>
+        <%= turbo_frame_tag "room_#{room.id}" do %>
+                  <%= render partial: "rooms/room", locals: { room: room } %>
+        <% end %>
+    <% end %>
+</div>
