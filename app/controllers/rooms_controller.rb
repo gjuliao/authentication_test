@@ -5,6 +5,12 @@ class RoomsController < ApplicationController
         @room = Room.new
     end
 
+    def show
+        @room = Room.find(params[:id])
+        @message = Message.new
+        @messages = Message.order(created_at: :desc)
+    end
+
     def create
         @room = Room.new(room_params)
         if @room.save

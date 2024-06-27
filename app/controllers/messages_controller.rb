@@ -32,11 +32,11 @@ class MessagesController < ApplicationController
     end
 
     def set_room
-        @room = Room.find(params[:id])
+        @room = Room.find(params[:room_id])
     end
 
     def message_params
-        params.require(:message).permit(:content)
+        params.require(:message).permit(:content, :user_id, :room_id)
     end
 
 
