@@ -1,1 +1,8 @@
+<%= turbo_stream_from @room %>
 <h4>hello from Room <%= @room.name %></h4>
+
+
+<%= render @room %>
+
+<%= render  "message", room: @room %>
+
