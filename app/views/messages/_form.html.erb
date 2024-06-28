@@ -1,0 +1,10 @@
+<%= form_with(model: [ room, @message ], url: room_messages_path(room, Message.new), data: { turbo: true }) do |form| %>
+
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+
+    
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.hidden_field :room_id, value: room.id %>
+    <%= form.submit :submit %>
+<% end %>

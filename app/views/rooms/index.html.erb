@@ -1,0 +1,14 @@
+<h1>Rooms</h1>
+
+
+<%= form_with(model: @room, data: { turbo: "true" }) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.submit :submit %>
+<% end %>
+
+<%= turbo_stream_from "rooms_list" %>
+<div id="rooms">
+    <%= render @rooms %>
+</div>
